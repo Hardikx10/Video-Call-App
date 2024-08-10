@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Socket, io } from "socket.io-client";
 
-const URL = "http://localhost:443";
+const URL = "https://videocall-backend-webrtc-08416685aa78.herokuapp.com/";
 
 export const Room = ({
     name,
