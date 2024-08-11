@@ -209,7 +209,7 @@ export const Room = ({
               ref={localVideoRef}
             />
           </div>
-          <button
+          {lobby?<></> :<button
             onClick={() => {
               socket?.emit('deleting-room', {
                 roomID
@@ -219,7 +219,7 @@ export const Room = ({
             className="absolute right-4 md:right-8 lg:right-30 bottom-[35%] md:bottom-[40%] lg:bottom-[50%] px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-800"
           >
             Next
-          </button>
+          </button>}
         </div>
       );
       
