@@ -215,7 +215,7 @@ export const Room = ({
               socket?.emit('deleting-room', {
                 roomID
               });
-             UserManager.prototype.addUser("randomName",socket)
+              UserManager.prototype.addUser("randomName",socket)
              
               
             //   setLobby(true)
