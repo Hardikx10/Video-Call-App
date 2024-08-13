@@ -214,9 +214,9 @@ export const Room = ({
               socket?.emit('deleting-room', {
                 roomID
               });
-           
-              window.location.reload();
               eventEmitter.emit('JoinTrigger');
+              window.location.reload();
+             
 
              
 
