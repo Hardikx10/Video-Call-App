@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react"
 
 import { Room } from "./Room";
-import eventEmitter from "./EventEmitter";
+
 
 export const Landing = () => {
     const name = "";
     const [localAudioTrack, setLocalAudioTrack] = useState<MediaStreamTrack | null>(null);
     const [localVideoTrack, setlocalVideoTrack] = useState<MediaStreamTrack | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
-    const joinRef:any=useRef(null)
+    // const joinRef:any=useRef(null)
     const [joined, setJoined] = useState(false);
 
     const getCam = async () => {
@@ -35,19 +35,19 @@ export const Landing = () => {
         }
     }, [videoRef]);
 
-    useEffect(() => {
-        const handleClick = () => {
-          if (joinRef.current) {
-            joinRef.current.click();
-          }
-        };
+    // useEffect(() => {
+    //     const handleClick = () => {
+    //       if (joinRef.current) {
+    //         joinRef.current.click();
+    //       }
+    //     };
     
-        eventEmitter.on('JoinTrigger', handleClick);
+    //     eventEmitter.on('JoinTrigger', handleClick);
     
-        return () => {
-          eventEmitter.off('JoinTrigger', handleClick);
-        };
-      }, []);
+    //     return () => {
+    //       eventEmitter.off('JoinTrigger', handleClick);
+    //     };
+    //   }, []);
     if (!joined) {
             
         return (
@@ -60,7 +60,7 @@ export const Landing = () => {
                 <div className="w-20">
                     <button
                         className="bg-sky-700 text-white text-xl font-bold py-3 px-9 rounded hover:bg-sky-900 transition duration-300"
-                        ref={joinRef} onClick={() => {
+                        onClick={() => {
                             setJoined(true);
                         }}
                     >
