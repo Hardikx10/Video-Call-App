@@ -8,7 +8,7 @@ export interface User {
 
 export class UserManager {
     private users: User[];
-    private queue: string[];
+    public queue: string[];
     private roomManager: RoomManager;
     
     constructor() {
@@ -90,3 +90,4 @@ export class UserManager {
     }
 
 }
+

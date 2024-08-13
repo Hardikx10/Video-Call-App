@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Socket, io } from "socket.io-client";
+import { UserManager } from "./../../../backend/src/managers/UserManger";
 
 const URL = "https://videocall-backend-webrtc-08416685aa78.herokuapp.com/";
 
@@ -15,7 +16,7 @@ export const Room = ({
 }) => {
    
     const [lobby, setLobby] = useState(true);
-    const [socket, setSocket] = useState<null | Socket>(null);
+    const [socket, setSocket] = useState<null | any>(null);
     const [, setSendingPc] = useState<null | RTCPeerConnection>(null);
     const [, setReceivingPc] = useState<null | RTCPeerConnection>(null);
     const [, setRemoteVideoTrack] = useState<MediaStreamTrack | null>(null);
@@ -214,7 +215,10 @@ export const Room = ({
               socket?.emit('deleting-room', {
                 roomID
               });
-              setLobby(true)
+              UserManager.prototype.addUser("randomName",socket)
+             
+              
+            //   setLobby(true)
             //   window.location.reload();
             }}
             className="absolute right-4 md:right-8 lg:right-30 bottom-[35%] md:bottom-[40%] lg:bottom-[50%] px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-800"
