@@ -215,8 +215,9 @@ export const Room = ({
                 roomID
               });
            
+              window.location.reload();
               eventEmitter.emit('JoinTrigger');
-               //   window.location.reload();
+
              
 
             }}
