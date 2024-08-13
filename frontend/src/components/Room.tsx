@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import { Socket, io } from "socket.io-client";
-
+import eventEmitter from "./EventEmitter";
 
 const URL = "https://videocall-backend-webrtc-08416685aa78.herokuapp.com/";
 
@@ -214,8 +214,11 @@ export const Room = ({
               socket?.emit('deleting-room', {
                 roomID
               });
+           
+              eventEmitter.emit('JoinTrigger');
+               //   window.location.reload();
+             
 
-            //   window.location.reload();
             }}
             className="absolute right-4 md:right-8 lg:right-30 bottom-[35%] md:bottom-[40%] lg:bottom-[50%] px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-800"
           >
