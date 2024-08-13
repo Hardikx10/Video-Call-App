@@ -16,7 +16,7 @@ export const Room = ({
 }) => {
    
     const [lobby, setLobby] = useState(true);
-    const [socket, setSocket] = useState<null | any>(null);
+    const [socket, setSocket] = useState<null | Socket | any>(null);
     const [, setSendingPc] = useState<null | RTCPeerConnection>(null);
     const [, setReceivingPc] = useState<null | RTCPeerConnection>(null);
     const [, setRemoteVideoTrack] = useState<MediaStreamTrack | null>(null);
@@ -215,7 +215,7 @@ export const Room = ({
               socket?.emit('deleting-room', {
                 roomID
               });
-              UserManager.prototype.addUser("randomName",socket)
+             UserManager.prototype.addUser("randomName",socket)
              
               
             //   setLobby(true)
