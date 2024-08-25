@@ -1,4 +1,6 @@
-## Peer to Peer video call app using WebRTC 
+# Video Call Web App
+
+## Peer to Peer Video Calling App using WebRTC 
 
 ### Tech Stack -
 
